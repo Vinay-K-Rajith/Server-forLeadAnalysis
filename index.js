@@ -4,7 +4,11 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: '*',              // allow any origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // allow all common methods
+  allowedHeaders: ['Content-Type', 'Authorization']     // allow common headers
+}));
 app.use(express.json());
 
 // Health check route for Render
