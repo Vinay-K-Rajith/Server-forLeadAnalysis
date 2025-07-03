@@ -4,12 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
-app.use(cors({
-  origin: "*",
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // allow all common methods
-  allowedHeaders: ['Content-Type', 'Authorization'],     // allow common headers
-  credentials: false,
-}));
+app.use(cors({ origin: 'https://lead-score.netlify.app', credentials: true }));;
 app.use(express.json());
 
 // Health check route for Render
