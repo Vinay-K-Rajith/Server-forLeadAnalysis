@@ -5,12 +5,10 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors({
-  origin: [
-    '*',
-    'https://lead-score.netlify.app'
-  ],
+  origin: "*",
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // allow all common methods
-  allowedHeaders: ['Content-Type', 'Authorization']     // allow common headers
+  allowedHeaders: ['Content-Type', 'Authorization'],     // allow common headers
+  credentials: false,
 }));
 app.use(express.json());
 
